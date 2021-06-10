@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Help Desk</title>
+</head>
+
+<body>
+  <!-- Add Row Form -->
+  <!-- Name, reps, weight, unit, date ,submit button -->
+  <main>
+    <h1>New Ticket</h1>
+    <form id="new_ticket">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <input type="text" name="issue" placeholder="Issue" required>
+      <input type="text" name="contact" placeholder="Contact Link" required>
+    
+      <label for="lbs">Open</label>
+      <input type="radio" id="open" name="status" value="0" checked> 
+      <label for="kgs">Closed</label>
+      <input type="radio" id="closed" name="status" value="1" disabled> 
+      <input type="date" name="date"  required>
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- Table with headers -->
+    <h1>Tickets</h1>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Issue</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <!-- tbody for DOM to manipulate -->
+      <tbody id="tbody"></tbody>
+    </table>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
