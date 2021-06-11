@@ -1,4 +1,43 @@
 const baseUrl = `http://localhost:4593/`;
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closedModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = document.querySelector(button.dataset.modalTarget)
+      openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+      closeModal(modal)
+  })
+})
+closedModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal')
+      closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+
+
+
 
 // This is a monster function, I plan to break it up into more managable functions but I just need to get it working
 const makeRow = (row) => {
