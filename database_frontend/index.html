@@ -10,34 +10,40 @@
 
 <body>
   <button data-modal-target="#modal" id="new-issue">New Issue</button>
+
   <div class="modal" id="modal">
     <div class="modal-header">
-      <div class="title">Example Modal</div>
+      <div class="title">New Ticket</div>
       <button data-close-button class="close-button">&times;</button>
     </div>
+
     <div class="modal-body">
-     
+      <form id="new_ticket">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" required>
+        <label for="subject">Topic of Issue:</label>
+        <input type="text" name="subject" required>
+        <label for="issue">Issue:</label>
+        <!-- <input type="text" name="issue" required> -->
+        <textarea name="issue" id="issue" required></textarea>
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" placeholder="Email/Teams/Zoom" required>
+      
+        <label for="open">Open</label>
+        <input type="radio" id="open" name="status" value="0" checked> 
+        <label for="closed">Closed</label>
+        <input type="radio" id="closed" name="status" value="1" disabled> 
+        <input type="date" name="date"  required>
+        <input type="submit" value="Submit">
+      </form>     
     </div>
+
   </div>
+
   <div id="overlay"></div>
   <!-- Add Row Form -->
   <!-- Name, reps, weight, unit, date ,submit button -->
   <main>
-    <h1>New Ticket</h1>
-    <form id="new_ticket">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="text" name="subject" placeholder="Subject" required>
-      <input type="text" name="issue" placeholder="Issue" required>
-      <input type="text" name="contact" placeholder="Contact Link" required>
-    
-      <label for="lbs">Open</label>
-      <input type="radio" id="open" name="status" value="0" checked> 
-      <label for="kgs">Closed</label>
-      <input type="radio" id="closed" name="status" value="1" disabled> 
-      <input type="date" name="date"  required>
-      <input type="submit" value="Submit">
-    </form>
-
     <!-- Table with headers -->
     <h1>Tickets</h1>
     <table id="table">

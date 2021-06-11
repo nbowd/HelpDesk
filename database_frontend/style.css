@@ -53,6 +53,31 @@
   width: 5rem;
 }
 
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+label:first-of-type{
+  margin-top: 0;
+}
+
+textarea {
+  min-height: 8em;
+  min-width: 100%;
+  padding: .5em;
+  border: solid 1px #999;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+input[type="radio"]:first-of-type {
+  margin-left: 0;
+}
 #overlay {
   position: fixed;
   opacity: 0;
