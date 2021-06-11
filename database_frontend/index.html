@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <button data-modal-target="#modal" id="new-issue">New Issue</button>
 
   <div class="modal" id="modal">
     <div class="modal-header">
@@ -29,12 +28,13 @@
         <label for="contact">Contact:</label>
         <input type="text" name="contact" placeholder="Email/Teams/Zoom" required>
       
-        <label for="open">Open</label>
+        <!-- <label for="open">Open</label>
         <input type="radio" id="open" name="status" value="0" checked> 
         <label for="closed">Closed</label>
         <input type="radio" id="closed" name="status" value="1" disabled> 
-        <input type="date" name="date"  required>
-        <input type="submit" value="Submit">
+        <input type="date" name="date"  required> -->
+        <br>
+        <input id="form-submit" type="submit" value="Submit">
       </form>     
     </div>
 
@@ -44,8 +44,15 @@
   <!-- Add Row Form -->
   <!-- Name, reps, weight, unit, date ,submit button -->
   <main>
+    <div id="table-header">
+      <div id="head-text">
+        <h1>Tickets</h1>
+      </div>
+      <div id="add-button">
+        <button data-modal-target="#modal" id="new-issue">New Issue</button>
+      </div>
+    </div>
     <!-- Table with headers -->
-    <h1>Tickets</h1>
     <table id="table">
       <thead>
         <tr>

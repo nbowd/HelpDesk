@@ -31,6 +31,14 @@
   border-bottom: 1px solid black;
 }
 
+#table-header {
+  display:flex;
+  justify-content: space-between;
+}
+
+#add-button {
+  padding-top: .7em;
+}
 .modal-header .title {
   font-size: 1.25rem;
   font-weight: bold;
@@ -77,6 +85,10 @@ input[type="radio"] + label {
 
 input[type="radio"]:first-of-type {
   margin-left: 0;
+}
+
+#form-submit {
+  margin-top: .5rem;
 }
 #overlay {
   position: fixed;

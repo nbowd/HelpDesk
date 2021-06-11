@@ -189,14 +189,20 @@ const addForm = document.getElementById('new_ticket');
 addForm.addEventListener('submit', async (e) => {
     // Stops page from refreshing on submit
     e.preventDefault();
+    d = new Date()
+    today = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`
+
+
 
     // Creates a place to store form data for request
     let context = {name:new_ticket.elements.name.value, subject:new_ticket.elements.subject.value, issue:new_ticket.elements.issue.value,
-        contact:new_ticket.elements.contact.value, status:new_ticket.elements.status.value, date:new_ticket.elements.date.value};
+        contact:new_ticket.elements.contact.value, status:0, date:today};
+    console.log(context)        
     const res = await axios.post(baseUrl, context);
     const rows = res.data.rows;
     makeRow(rows[rows.length -1]);
     addForm.reset();  
+    closeModal(addForm.closest('.modal'));
 });
 
 // Single event listener on the table element, action in response depends on the target clicked
