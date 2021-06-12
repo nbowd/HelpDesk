@@ -10,6 +10,7 @@
 
 <body>
 
+  <!-- Add form modal -->
   <div class="modal" id="modal">
     <div class="modal-header">
       <div class="title">New Ticket</div>
@@ -23,22 +24,16 @@
         <label for="subject">Topic of Issue:</label>
         <input type="text" name="subject" required>
         <label for="issue">Issue:</label>
-        <!-- <input type="text" name="issue" required> -->
         <textarea name="issue" id="issue" required></textarea>
         <label for="contact">Contact:</label>
         <input type="text" name="contact" placeholder="Email/Teams/Zoom" required>
-      
-        <!-- <label for="open">Open</label>
-        <input type="radio" id="open" name="status" value="0" checked> 
-        <label for="closed">Closed</label>
-        <input type="radio" id="closed" name="status" value="1" disabled> 
-        <input type="date" name="date"  required> -->
         <br>
         <input id="form-submit" type="submit" value="Submit">
       </form>     
     </div>
   </div>
 
+  <!-- Issue Modal to be created with DOM -->
   <div class="modal" id="issue-modal">
     <div  class="modal-header">
       <div id='issue-header' class="title"></div>
@@ -47,11 +42,10 @@
 
     <div id='issue-body' class="modal-body"></div>
   </div>
-  <!-- <button data-modal-target="#issue-modal" id="view-issue">open modal</button> -->
 
+  <!-- Used for modal background effect -->
   <div id="overlay"></div>
-  <!-- Add Row Form -->
-  <!-- Name, reps, weight, unit, date ,submit button -->
+ 
   <main>
     <div id="table-header">
       <div id="head-text">
