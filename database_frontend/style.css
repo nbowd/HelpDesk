@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Raleway;
 }
 
 .modal {
@@ -12,12 +13,28 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 10px;
   z-index: 10;
-  background-color: white;
+  color: white;
+  background-color: #15304b;
   width: 500px;
   max-width: 80%;
+}
+#contact-input, #name-input {
+  min-width: 15rem;
+}
+
+.modal input, .modal textarea {
+  background-color: #001528;
+  border: none;
+  color: white;   
+  margin-top: .2rem;
+}
+
+.modal input {
+  padding-left: 5px;
+  min-height: 2em;
 }
 
 .modal.active {
@@ -28,12 +45,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 
 #table-header {
   display:flex;
-  justify-content: space-between;
+  padding-left: .3rem;
+  padding-bottom: .1rem;
 }
 
 #add-button {
@@ -49,8 +67,9 @@
   border: none;
   outline: none;
   background: none;
-  font-size: 1.25;
+  font-size: 2rem;
   font-weight: bold;
+  color: white;
 }
 
 .modal-body {
@@ -74,7 +93,6 @@ textarea {
   min-height: 8em;
   min-width: 100%;
   padding: .5em;
-  border: solid 1px #999;
 }
 
 input[type="radio"] + label {
@@ -88,7 +106,10 @@ input[type="radio"]:first-of-type {
 }
 
 #form-submit {
-  margin-top: .5rem;
+  margin-top: 1rem;
+  background-color: #008529;
+  padding-right: .4rem;
+
 }
 #overlay {
   position: fixed;
@@ -112,28 +133,30 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  color: #4f546c;
+  color: #ffffff;
   font-size: 0.9rem;
-  background-color: #f9fbff;
+  background-color: #01203c;
 }
 
 table {
   border-collapse: collapse;
-  box-shadow: 0 5px 10px #e1e5ee;
-  background-color: white;
+  box-shadow: 0 5px 10px #013668;
+  background-color: #001528;
   text-align: left;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 thead {
-  box-shadow: 0 5px 10px #e1e5ee;
+  /* box-shadow: 0 5px 10px #15314b; */
+  background-color: #15314b;
 }
 
 th {
   padding: 1rem .75rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
   
 }
@@ -142,11 +165,28 @@ td {
   padding: 1rem .75rem;
 }
 
-.edit-btn, .status-label{
+.edit-btn, .status-label, #new-issue{
   padding: 2px 5px;
   margin: 1px;
+  border: solid 1px black;
+  border-radius: 4px;
+  color: white;
+  background-color: #626ee3;
 }
 
 tr:nth-child(even){
-  background-color: #f4f6fb;
+  background-color: #001c36;
+}
+
+.sub-btn {
+  color: white;
+  background-color: #008529;
+}
+.del-btn {
+  color: white;
+  background-color: #ff0000;
+}
+.close-btn {
+  color: white;
+  background-color: #7e8286;
 }

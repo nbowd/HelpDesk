@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
   <link rel="stylesheet" href="style.css">
   <title>Help Desk</title>
 </head>
@@ -20,15 +22,15 @@
     <div class="modal-body">
       <form id="new_ticket">
         <label for="name">Your Name:</label>
-        <input type="text" name="name" required>
+        <input type="text" id='name-input' name="name" required>
         <label for="subject">Topic of Issue:</label>
         <input type="text" name="subject" required>
         <label for="issue">Issue:</label>
         <textarea name="issue" id="issue" required></textarea>
         <label for="contact">Contact:</label>
-        <input type="text" name="contact" placeholder="Email/Teams/Zoom" required>
+        <input type="text" id='contact-input' name="contact" placeholder="Email/Teams/Zoom" required>
         <br>
-        <input id="form-submit" type="submit" value="Submit">
+        <input id="form-submit" type="submit" class ='sub-btn' value="Submit">
       </form>     
     </div>
   </div>
@@ -52,19 +54,20 @@
         <h1>Tickets</h1>
       </div>
       <div id="add-button">
-        <button data-modal-target="#modal" id="new-issue">New Issue</button>
+        
       </div>
     </div>
     <!-- Table with headers -->
     <table id="table">
       <thead>
-        <tr>
+        <tr id='trHead'>
           <th>Name</th>
           <th>Subject</th>
           <th>Issue</th>
           <th>Contact</th>
           <th>Status</th>
           <th>Date</th>
+          <th><button data-modal-target="#modal" id="new-issue">New Issue</button></th>
         </tr>
       </thead>
       <!-- tbody for DOM to manipulate -->

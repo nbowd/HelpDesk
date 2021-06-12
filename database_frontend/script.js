@@ -35,8 +35,6 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-
-// 
 const makeRow = (row) => {
 
     let tbody = document.querySelector('#tbody');
@@ -66,14 +64,14 @@ const makeRow = (row) => {
     let editButton = makeEdit(tr, row);
     
     // Close ticket button, hidden until edit toggle
-    makeOptions(editButton, 'Close Ticket', row.id)
-
+    let closeButton = makeOptions(editButton, 'Close Ticket', row.id)
+    closeButton.classList.add('close-btn')
     // Creates delete button, hidden
-    makeOptions(editButton, 'Delete', row.id)
-
+    let delButton = makeOptions(editButton, 'Delete', row.id)
+    delButton.classList.add('del-btn')
     // Creates submit button, hidden
-    makeOptions(editButton, 'Submit', row.id)
-
+    let subButton = makeOptions(editButton, 'Submit', row.id)
+    subButton.classList.add('sub-btn')
 };
 
 const makeCell = (tr, rowProp) => {
@@ -89,7 +87,7 @@ const issueSetup = (tr, row) => {
     issue.type = 'button';
     issue.dataset.modalTarget = '#issue-modal'
     issue.id = row.id
-    issue.classList.add('issue'+row.id)
+    issue.classList.add('issue'+row.id, 'edit-btn')
 }
 
 const statusSetup = (tr, row) => {
@@ -114,12 +112,13 @@ const makeEdit = (tr, row) => {
     return tdEdit
 }
 const makeOptions = (td, text, id) => {
-    let closeButton = td.appendChild(document.createElement('input'));
-    closeButton.type = 'submit';
-    closeButton.value = text;
-    closeButton.id = id;
-    closeButton.hidden = true;
-    closeButton.classList.add('edit-btn');
+    let optionsButton = td.appendChild(document.createElement('input'));
+    optionsButton.type = 'submit';
+    optionsButton.value = text;
+    optionsButton.id = id;
+    optionsButton.hidden = true;
+    optionsButton.classList.add('edit-btn');
+    return optionsButton
 }
 
 // Reveals hidden buttons, hides edit button
