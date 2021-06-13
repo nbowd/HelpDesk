@@ -11,5 +11,8 @@ The frontend is a UI to work with the current database entries. The ticket issue
 
 Here is a short video demonstrating the functionality:
 
-https://user-images.githubusercontent.com/69742419/121791045-726bc680-cb9a-11eb-96c1-729f591209b3.mov
+
+https://user-images.githubusercontent.com/69742419/121819500-473cb200-cc42-11eb-9a87-a995f52568fd.mov
+
+
 
